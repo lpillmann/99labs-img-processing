@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 import argparse
-
 from PIL import Image
-
-import pdb
 
 def format_img(filein, width=800, height=600):
 	
@@ -15,7 +12,7 @@ def format_img(filein, width=800, height=600):
 	
 
 	scale = max(w_scale, h_scale)
-	img2 = img.resize((int(w*scale), int(h*scale)))
+	img2 = img.resize((int(w*scale), int(h*scale)), Image.BICUBIC)
 
 	box = (0,0,width,height)
 	img3 = img2.crop(box)
@@ -32,7 +29,7 @@ def format_logo(filein):
 	h_scale = 140 / h
 	scale = min(w_scale, h_scale)
 
-	img2 = img.resize((int(w*scale), int(h*scale)))
+	img2 = img.resize((int(w*scale), int(h*scale)), Image.BICUBIC)
 	w2,h2 = img2.size
 
 	bg = Image.new('RGB', (150,150), 'white')  # Creates 150x150 white image
@@ -63,7 +60,7 @@ def get_formated_images(input_main, input_logo, lab_name):
 	main_img.save(lab_name+'_main-logo.png')
 
 if __name__ == '__main__':
-	"""Usage example: ./resize_img.py main.png labtucal-logo.png labtucal """
+	"""Usage example: ./get_formatted_images.py main.png labtucal-logo.png labtucal """
 
 	parser = argparse.ArgumentParser()
 	parser.add_argument('input_main', help='The main image to be resized and cropped.')
