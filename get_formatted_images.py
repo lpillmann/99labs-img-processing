@@ -23,6 +23,7 @@ def format_img(filein, width=800, height=600):
 def format_logo(filein):
 	
 	img = Image.open(filein)
+	img.load()
 	w,h = img.size
 
 	w_scale = 140 / w
@@ -39,7 +40,7 @@ def format_logo(filein):
 	ph = int((150-h2) / 2)
 
 	box = (pw,ph,pw+w2,ph+h2)  # (left, upper, right, lower)
-	bg.paste(img2, box)
+	bg.paste(img2, box, mask=img2.split()[3])
 
 	#img3.save(fileout)
 
