@@ -53,12 +53,12 @@ def get_formated_images(input_main, input_logo, lab_name):
 	logo_img = 		format_logo(input_logo)
 	
 	# Saves separate before pasting together
-	main_img.save(lab_name+'_main.png')
-	logo_img.save(lab_name+'_logo.png')
+	main_img.save('output/' + lab_name +'_main.png')
+	logo_img.save('output/' + lab_name+'_logo.png')
 
 	box = (800-150, 600-150, 800, 600)
 	main_img.paste(logo_img, box)
-	main_img.save(lab_name+'_main-logo.png')
+	main_img.save('output/' + lab_name+'_main-logo.png')
 
 if __name__ == '__main__':
 	"""Usage example: ./get_formatted_images.py main.png labtucal-logo.png labtucal """

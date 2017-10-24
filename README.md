@@ -1,6 +1,9 @@
 # 99labs-img-processing
 Script to generate formatted images from labs' provided main picture and logo.
 
+Input folder: img/
+Output folder: output/
+
 ## What it does
  
  - Resizes and crops main image to 800x600
@@ -9,7 +12,7 @@ Script to generate formatted images from labs' provided main picture and logo.
 
 ## Usage
 
-	./get_formatted_images.py main.png logo.png labmassa
+	./get_formatted_images.py img/main.* img/logo.* labcet
 
 First argument refers to original main image. Second, original logo. And the third is the lab. name.
 
