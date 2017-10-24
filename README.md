@@ -12,8 +12,12 @@ Output folder: output/
 
 ## Usage
 
+Place the original images into img/ folder, preferably naming the logo as "logo.png" and main pic as "main.png".
+
+Run the script, as follows: 
+
 	./get_formatted_images.py img/main.* img/logo.* labcet
 
-First argument refers to original main image. Second, original logo. And the third is the lab. name.
+First argument refers to original main image. Second, original logo. And the third is the lab. name. If permission is denied, you might run `chmod +x get_formatted_images.py` to make the Python script executable.
 
-If permission is denied, you might run `chmod +x get_formatted_images.py` to make the Python script executable.
+Copy images from output/ folder.
