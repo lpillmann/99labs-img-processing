@@ -40,7 +40,10 @@ def format_logo(filein):
 	ph = int((150-h2) / 2)
 
 	box = (pw,ph,pw+w2,ph+h2)  # (left, upper, right, lower)
-	bg.paste(img2, box, mask=img2.split()[3])
+	try:
+		bg.paste(img2, box, mask=img2.split()[3])
+	except:
+		bg.paste(img2, box)
 
 	#img3.save(fileout)
 
